@@ -8,46 +8,86 @@
  <link rel="stylesheet" href="css/style.css" />
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
  <title>About</title>
+
 </head>
 
 <body>
  <header>
   <div>
    <ul class="navbar">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About </a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="Index.html">Home</a></li>
+    <li><a href="About.html">About </a></li>
+    <li><a href="Services.html">Services</a></li>
+    <li><a href="Contact.html">Contact</a></li>
    </ul>
    <div>
  </header>
 
 <div>
- <form action="/action_page.php" method="post">
+ <form action="Index.html"  name = "vform">
   <div class="container1">
    <label for="name"><b>Name : </b></label>
-   <input type="text" placeholder="Enter full name" name="Name" required>
+   <input id="userName" type="text" placeholder="Enter full name" name="Name" required>
 
    <label for="psw"><b>Password : </b></label>
-   <input type="password" placeholder="Enter Password" name="psw" required>
+   <input id="password" type="password" placeholder="Enter Password" name="psw" required>
    <label for="gender"><b>Gender : </b></label>
-   <input type="radio" name="gender" value="male"> Male
-   <input type="radio" name="gender" value="female"> Female
-   <input type="radio" name="gender" value="other"> Other
+   <select name="user_gender" id="gender">
+     <option value="male">male</option>
+    <option value="female">female</option>
+    <option value="others">others</option>
+   </select>
    <label for="email"><b>Email : </b></label>
-   <input type="email" placeholder="Enter Email" name="Email" required>
-   <label for="Phone no"><b>Phone no : </b></label>
-   <input type="phone no" placeholder="Enter number" name="phone no" required>
+   <input id="email" type="email" placeholder="Enter Email" name="Email" required>
 
-   <button class="btn11" type="submit">Submit</button>
-   
+
+   <button onclick="signUp()" class="btn11" type="submit">Submit</button>
+
     <div class="clr"></div>
-    
+
     <footer id="main-footer">
      <p>Sport Connect &copy; 2020, All Right Reserved</p>
     </footer>
     </section>
   </div>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyCRKW7-X6HDfGeGekxSptCcmWMCOe4RqPc",
+      authDomain: "sports-connect-673ed.firebaseapp.com",
+      databaseURL: "https://sports-connect-673ed.firebaseio.com",
+      projectId: "sports-connect-673ed",
+      storageBucket: "sports-connect-673ed.appspot.com",
+      messagingSenderId: "240912296212",
+      appId: "1:240912296212:web:963fc9c748fd853526fa01",
+      measurementId: "G-5JDP8PGRD9"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    function signUp() {
+      var Name=document.getElementById("userName").value;
+      var user_gender=document.getElementById("gender").value;
+      var Email = document.getElementById("email").value;
+      var psw = document.getElementById("password").value;
+
+      firebase.auth().createUserWithEmailAndPassword(Name,user_gender,Email,psw).catch(function (error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ...
+      });
+    }
+  </script>
   </body>
-  
+
   </html>

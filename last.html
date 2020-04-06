@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCRKW7-X6HDfGeGekxSptCcmWMCOe4RqPc",
+    authDomain: "sports-connect-673ed.firebaseapp.com",
+    databaseURL: "https://sports-connect-673ed.firebaseio.com",
+    projectId: "sports-connect-673ed",
+    storageBucket: "sports-connect-673ed.appspot.com",
+    messagingSenderId: "240912296212",
+    appId: "1:240912296212:web:963fc9c748fd853526fa01",
+    measurementId: "G-5JDP8PGRD9"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  var database=firebase.database();
+  function send() {
+    firebase.database().ref("users").set({
+      name:document.getElementById("name").value,
+      age:document.getElementById("age").value
+    });
+
+  }
+</script>
+<h1>my data</h1>
+<input id="name" type="text" name="name" >
+<input id="age" type="text" name="age" >
+<button onclick="send()"type="submit" name="button"></button>
+  </body>
+</html>
