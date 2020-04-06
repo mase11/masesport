@@ -225,22 +225,6 @@ p {
   /* color: red; */
 }
 
-/* contact form
-#contat-form .form-group {
-  margin-bottom: 20px;
-}
-
-#contat-form .label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-#contat-form input,
-#contat-form .textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px #ddd solid;
-} */
 
 /* contact form */
 input[type="text"], input[type="password"], input[type="radio"], input[type="email"], input[type="phone no"],
@@ -317,7 +301,7 @@ textarea {
   text-align: center;
   padding: 50px 50px;
   overflow: hidden;
-  background: #4c6c; 
+  background: #4c6c;
 }
 
 #service-me .info-contents p {
@@ -326,14 +310,14 @@ textarea {
 
 .drpdown {
   width: 50%;
-  
+
 }
 
 
-/* 
+/*
 .container {
   height: 100%;
-  
+
 }  */
 
 
@@ -346,13 +330,13 @@ textarea {
   width: 100%;
   padding: 12px;
   margin-top: 6px;
-  margin-bottom: 16px; 
-  resize: vertical; 
+  margin-bottom: 16px;
+  resize: vertical;
   border-radius: 6px;
   background: #333;
-  color: white; 
-  font-size: 20px;  
- } 
+  color: white;
+  font-size: 20px;
+ }
 
  /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
@@ -381,5 +365,3 @@ padding: 15px;
 text-align: center;
 color: white;
 }
-
-
